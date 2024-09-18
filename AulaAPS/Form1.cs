@@ -133,6 +133,7 @@ namespace AulaAPS
                     break;
                     
             }
+            limpaCampos();
          
         }
 
