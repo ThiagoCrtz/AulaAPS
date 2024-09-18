@@ -109,54 +109,107 @@ namespace AulaAPS
             ExibirRaio(false);
             ExibircbmTriangulo(true);
         }
-
+        private void limpaCampos()
+        {
+            txtAltura.Clear();
+            txtRaio.Clear();
+            txtBase.Clear();    
+        }
         private void btnCriar_Click(object sender, EventArgs e)
         {
-            if (cmbForma.Text.Equals("Quadrado")){
-                FormaGeometrica quadrado = new Quadrado() {
-                    Lado = Convert.ToDouble(txtBase.Text) 
-                };
-                cmbObjetos.Items.Add(quadrado);
-            }else if(cmbForma.Text.Equals("Circunferência")){
-                FormaGeometrica circunferencia = new Circunferencia(){
-                    Raio = Convert.ToDouble(txtRaio.Text)
-                };
-                cmbObjetos.Items.Add(circunferencia);
-            }else if (cmbForma.Text.Equals("Retângulo")){
-                FormaGeometrica retangulo = new Retangulo(){
-                    Altura = Convert.ToDouble(txtAltura.Text),
-                    Base = Convert.ToDouble(txtBase.Text)
-                };
-                cmbObjetos.Items.Add(retangulo);
-            }
-            else if (cmbTriangulo.Text.Equals("Isósceles"))
+            switch (cmbForma.Text)
             {
-                FormaGeometrica isosceles = new TrianguloIsosceles()
-                {
-                    Base = Convert.ToDouble(txtBase.Text), 
-                    Altura = Convert.ToDouble(txtAltura.Text),
-                };
-                cmbObjetos.Items.Add(isosceles);
+                case "Quadrado":
+                    CadQuadrado();
+                    break;
+                case "Circunferência":
+                    CadCircuferência();
+                    break;
+                case "Retângulo":
+                    CadRetangulo();
+                    break;
+                case "Triângulo":
+                    CadTriangulo();
+                    break;
+                    
             }
-            else if (cmbTriangulo.Text.Equals("Reto"))
+         
+        }
+
+        
+        private void CadQuadrado()
+        {
+            FormaGeometrica quadrado = new Quadrado()
             {
-                FormaGeometrica reto = new TrianguloReto()
-                {
-                    Base = Convert.ToDouble(txtBase.Text),
-                    Altura = Convert.ToDouble(txtAltura.Text)
+                Lado = Convert.ToDouble(txtBase.Text)
+                
+            };
+            cmbObjetos.Items.Add(quadrado);
+        }
+        private void CadCircuferência()
+        {
+            FormaGeometrica circunferencia = new Circunferencia()
+            {
+                Raio = Convert.ToDouble(txtRaio.Text)
+            };
+            cmbObjetos.Items.Add(circunferencia);
 
-                };
-                cmbObjetos.Items.Add(reto);
-            }
+        }
+        private void CadRetangulo()
+        {
+            FormaGeometrica retangulo = new Retangulo()
+            {
+                Altura = Convert.ToDouble(txtAltura.Text),
+                Base = Convert.ToDouble(txtBase.Text)
+            };
+            cmbObjetos.Items.Add(retangulo);
+        }
+        private void CadTriangulo() 
+        {
+            switch (cmbTriangulo.Text)
+            {
+                case "Equilátero":
+                    CadTrianguloEquilatero();
+                    break;
 
-            else if(cmbTriangulo.Text.Equals("Equilátero")){
-                FormaGeometrica equilatero = new TrianguloEquilatero(){
-                    Base = Convert.ToDouble(txtBase.Text)
-                };
-                cmbObjetos.Items.Add(equilatero);
+                case "Reto":
+                    CadTrianguloReto();
+                    break;
+
+                case "Isósceles":
+                    CadTrianguloIsosceles();
+                    break;
             }
         }
 
+        private void CadTrianguloIsosceles()
+        {
+            FormaGeometrica isosceles = new TrianguloIsosceles()
+            {
+                Base = Convert.ToDouble(txtBase.Text),
+                Altura = Convert.ToDouble(txtAltura.Text)
+            };
+            cmbObjetos.Items.Add(isosceles);
+        }
+
+        private void CadTrianguloReto()
+        {
+            FormaGeometrica reto = new TrianguloReto()
+            {
+                Base = Convert.ToDouble(txtBase.Text),
+                Altura = Convert.ToDouble(txtAltura.Text)
+            };
+            cmbObjetos.Items.Add(reto);
+        }
+
+        private void CadTrianguloEquilatero()
+        {
+            FormaGeometrica equilatero = new TrianguloEquilatero()
+            {
+                Base = Convert.ToDouble(txtBase.Text)
+            };
+            cmbObjetos.Items.Add(equilatero);
+        }
         private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
         {
             FormaGeometrica obj = cmbObjetos.SelectedItem as FormaGeometrica;

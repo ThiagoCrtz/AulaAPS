@@ -128,6 +128,7 @@
             this.txtRaio.Name = "txtRaio";
             this.txtRaio.Size = new System.Drawing.Size(100, 20);
             this.txtRaio.TabIndex = 7;
+            this.txtRaio.Visible = false;
             // 
             // txtAltura
             // 
@@ -135,6 +136,7 @@
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(100, 20);
             this.txtAltura.TabIndex = 6;
+            this.txtAltura.Visible = false;
             // 
             // txtBase
             // 
@@ -142,6 +144,7 @@
             this.txtBase.Name = "txtBase";
             this.txtBase.Size = new System.Drawing.Size(100, 20);
             this.txtBase.TabIndex = 5;
+            this.txtBase.Visible = false;
             // 
             // lblRaio
             // 
@@ -151,6 +154,7 @@
             this.lblRaio.Size = new System.Drawing.Size(29, 13);
             this.lblRaio.TabIndex = 4;
             this.lblRaio.Text = "Raio";
+            this.lblRaio.Visible = false;
             // 
             // lblAltura
             // 
@@ -160,6 +164,7 @@
             this.lblAltura.Size = new System.Drawing.Size(34, 13);
             this.lblAltura.TabIndex = 3;
             this.lblAltura.Text = "Altura";
+            this.lblAltura.Visible = false;
             // 
             // lblBase
             // 
@@ -169,6 +174,7 @@
             this.lblBase.Size = new System.Drawing.Size(31, 13);
             this.lblBase.TabIndex = 2;
             this.lblBase.Text = "Base";
+            this.lblBase.Visible = false;
             // 
             // cmbTriangulo
             // 
