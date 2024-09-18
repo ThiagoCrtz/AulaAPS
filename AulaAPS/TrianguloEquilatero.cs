@@ -19,5 +19,9 @@ namespace AulaAPS
         {
             return 3 * _base;
         }
+        public override string ToString()
+        {
+            return $"Triangulo Equilatero ({_base})";
+        }
     }
 }
