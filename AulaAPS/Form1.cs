@@ -160,8 +160,8 @@ namespace AulaAPS
         private void cmbObjetos_SelectedIndexChanged(object sender, EventArgs e)
         {
             FormaGeometrica obj = cmbObjetos.SelectedItem as FormaGeometrica;
-            txtArea.Text = obj.CalcularArea().ToString();
-            txtPerimetro.Text = obj.CalcularPerimetro().ToString();
+            txtArea.Text = obj.CalcularArea().ToString("F2");
+            txtPerimetro.Text = obj.CalcularPerimetro().ToString("F2");
         }
 
        
